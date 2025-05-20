@@ -1,0 +1,14 @@
+name: Ping Replit
+on:
+  schedule:
+    - cron: '*/3 * * * *'  # Каждые 3 минуты
+  workflow_dispatch:  # Ручной запуск
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send ping to Replit
+        run: |
+          curl -s -o /dev/null "https://e44abba4-307c-4e6c-ad40-0e911830d74e-00-3c43xz1yrf1cz.sisko.replit.dev/"
+          echo "✅ Replit успешно пропингована!"
